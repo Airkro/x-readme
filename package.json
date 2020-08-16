@@ -1,0 +1,68 @@
+{
+  "name": "x-readme",
+  "version": "0.3.1",
+  "description": "Create `README.md` automatically",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Chen",
+    "email": "airkro@qq.com"
+  },
+  "keywords": [
+    "doc",
+    "document",
+    "generator",
+    "markdown",
+    "package",
+    "readme",
+    "usage"
+  ],
+  "homepage": "https://www.npmjs.com/package/x-readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airkro/x-readme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/airkro/x-readme/issues"
+  },
+  "bin": {
+    "x-readme": "index.cjs"
+  },
+  "files": [
+    "cwd",
+    "index.cjs",
+    "lib"
+  ],
+  "scripts": {
+    "lint:staged": "nice-move lint staged",
+    "prepare": "git config core.hooksPath .githooks"
+  },
+  "dependencies": {
+    "cheetor": "^0.13.0",
+    "fs-chain": "^8.2.1",
+    "iconv-lite": "^0.6.3",
+    "qs": "^6.10.3",
+    "remark": "^14.0.2",
+    "remark-parse": "^10.0.1",
+    "remark-stringify": "^10.0.2",
+    "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@nice-move/cli": "^0.7.2",
+    "@nice-move/eslint-config-base": "^0.6.7",
+    "@nice-move/prettier-config": "^0.5.4",
+    "eslint": "^8.13.0",
+    "garou": "^0.4.6",
+    "prettier": "^2.6.2"
+  },
+  "engines": {
+    "node": "^14.17.0 || >=16.13.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "eslintConfig": {
+    "extends": "@nice-move/eslint-config-base"
+  },
+  "prettier": "@nice-move/prettier-config"
+}
