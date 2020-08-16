@@ -1,5 +1,6 @@
-const remark = require('remark');
+const { execSync } = require('child_process');
 const qs = require('qs');
+const remark = require('remark');
 
 const { parse, stringify } = remark().data('settings', {
   commonmark: true,
@@ -12,11 +13,48 @@ function shield(name, path, option) {
   return `https://img.shields.io/${path}/${name}.svg?${query}`;
 }
 
+function getHelp(command) {
+  return execSync(
+    command === 'x-readme' ? 'node index -h' : `npx -c "${command} -h"`,
+  )
+    .toString()
+    .trim();
+}
+
+function getUsage(help) {
+  try {
+    return help
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line.startsWith('Usage:'))
+      .map((line) => line.replace(/Usage:\s?/, 'npx -c '))
+      .join('\n');
+  } catch {
+    return 'Error: usage not found';
+  }
+}
+
+function getCommand(help, command) {
+  const text = help
+    .split('\n\n')
+    .find((group) => group.startsWith('Commands:'));
+
+  return text
+    ? text
+        .replace(/^Commands:/, '')
+        .trim()
+        .split('\n')
+        .map((line) =>
+          line.replace(new RegExp(`^\\s*${command}\\s`), '').split(/\s{2,9}/),
+        )
+    : [];
+}
+
 function pkg2readme({
-  private: isPrivate,
-  name,
-  description,
   bin,
+  description,
+  name,
+  private: isPrivate,
   repository: { url, directory },
 }) {
   const [command] = Object.keys(bin);
@@ -116,7 +154,10 @@ function pkg2readme({
         },
       ];
 
-  return {
+  const help = getHelp(command);
+  const commands = getCommand(help, command);
+
+  return stringify({
     type: 'root',
     children: [
       {
@@ -131,7 +172,7 @@ function pkg2readme({
       },
       {
         type: 'paragraph',
-        children: parse(`${description.replace(/\.$/, '')}.`).children,
+        children: parse(description.replace(/\.?$/, '.')).children,
       },
       ...link,
       {
@@ -162,15 +203,46 @@ function pkg2readme({
       {
         type: 'code',
         lang: 'bash',
-        value: `npx -c ${command}`,
+        value: getUsage(help),
       },
+      ...(commands.length > 0
+        ? [
+            {
+              type: 'heading',
+              depth: 2,
+              children: [
+                {
+                  type: 'text',
+                  value: 'Commands',
+                },
+              ],
+            },
+          ]
+        : []),
+      ...commands.flatMap(([commandName, describe]) => [
+        {
+          type: 'heading',
+          depth: 3,
+          children: [
+            {
+              type: 'text',
+              value: commandName,
+            },
+          ],
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: describe.replace(/\.?$/, '.'),
+            },
+          ],
+        },
+      ]),
       ...definition,
     ],
-  };
+  });
 }
 
-module.exports = {
-  parse,
-  stringify,
-  pkg2readme,
-};
+module.exports = { pkg2readme };

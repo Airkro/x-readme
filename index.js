@@ -11,7 +11,7 @@ const {
   repository: { url } = {},
 } = require('./package.json');
 
-const { stringify, pkg2readme } = require('./lib');
+const { pkg2readme } = require('./lib');
 
 const scriptName = Object.keys(bin)[0];
 const repository = url.replace(/\.git$/, '');
@@ -34,5 +34,4 @@ yargs
 new JsonToText()
   .source(resolve(process.cwd(), 'package.json'))
   .handle(pkg2readme)
-  .handle(stringify)
   .output(resolve(process.cwd(), 'readme.md'));
