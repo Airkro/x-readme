@@ -1,6 +1,6 @@
 {
   "name": "x-readme",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create `README.md` automatically",
   "license": "MIT",
   "author": {
@@ -8,6 +8,7 @@
     "email": "airkro@qq.com"
   },
   "keywords": [
+    "doc",
     "generator",
     "markdown",
     "package",
@@ -26,7 +27,7 @@
     "x-readme": "index.js"
   },
   "files": [
-    "lib.js"
+    "lib"
   ],
   "scripts": {
     "format": "nice-move lint",
@@ -44,7 +45,7 @@
   },
   "devDependencies": {
     "@nice-move/cli": "^0.4.2",
-    "@nice-move/eslint-config-base": "^0.3.5",
+    "@nice-move/eslint-config-base": "^0.3.6",
     "@nice-move/prettier-config": "^0.2.5",
     "eslint": "^6.8.0",
     "husky": "^4.2.5",

@@ -40,14 +40,14 @@
     yargs "^15.4.1"
     yarn-deduplicate "^2.1.1"
 
-"@nice-move/eslint-config-base@^0.3.5":
-  version "0.3.5"
-  resolved "https://registry.npm.taobao.org/@nice-move/eslint-config-base/download/@nice-move/eslint-config-base-0.3.5.tgz#da91e11978474e00c1b53109cb6dcdedaae7dcd6"
-  integrity sha1-2pHhGXhHTgDBtTEJy23N7arn3NY=
+"@nice-move/eslint-config-base@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.npm.taobao.org/@nice-move/eslint-config-base/download/@nice-move/eslint-config-base-0.3.6.tgz#972d817490810c9342f907bc7d4b0f3c50d99cb0"
+  integrity sha1-ly2BdJCBDJNC+Qe8fUsPPFDZnLA=
   dependencies:
     eslint-config-airbnb-base "^14.2.0"
     eslint-config-prettier "^6.11.0"
-    eslint-plugin-html "^6.0.2"
+    eslint-plugin-html "^6.0.3"
     eslint-plugin-import "^2.22.0"
     eslint-plugin-markdown "^2.0.0-alpha.0"
     eslint-plugin-node "^11.1.0"
@@ -697,7 +697,7 @@ eslint-plugin-es@^3.0.0:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
 
-eslint-plugin-html@^6.0.2:
+eslint-plugin-html@^6.0.3:
   version "6.0.3"
   resolved "https://registry.npm.taobao.org/eslint-plugin-html/download/eslint-plugin-html-6.0.3.tgz?cache=0&sync_timestamp=1596891051341&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-html%2Fdownload%2Feslint-plugin-html-6.0.3.tgz#8d9d2c187d1a48ed78d84f45e29820f102425e51"
   integrity sha1-jZ0sGH0aSO142E9F4pgg8QJCXlE=
@@ -1465,7 +1465,7 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-kleur@^4.0.3, kleur@^4.1.0:
+kleur@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npm.taobao.org/kleur/download/kleur-4.1.0.tgz?cache=0&sync_timestamp=1597286059419&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fkleur%2Fdownload%2Fkleur-4.1.0.tgz#eea37aa8c210a06c42a591ee56a13f137a13add3"
   integrity sha1-7qN6qMIQoGxCpZHuVqE/E3oTrdM=
