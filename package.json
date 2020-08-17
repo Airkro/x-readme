@@ -1,6 +1,6 @@
 {
   "name": "x-readme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create `README.md` automatically",
   "license": "MIT",
   "author": {
@@ -9,6 +9,7 @@
   },
   "keywords": [
     "doc",
+    "document",
     "generator",
     "markdown",
     "package",
@@ -27,6 +28,7 @@
     "x-readme": "index.js"
   },
   "files": [
+    "cwd",
     "lib"
   ],
   "scripts": {
@@ -52,7 +54,7 @@
     "prettier": "^2.0.5"
   },
   "engines": {
-    "node": "^10.18 || >=12.14"
+    "node": "^10.18 || >=12.14 || ^14"
   },
   "eslintConfig": {
     "extends": "@nice-move/eslint-config-base"
