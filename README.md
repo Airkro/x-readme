@@ -28,4 +28,4 @@ npx -c x-readme <command>
 
 ### dev
 
-Create for a devDependencies package.
+Create as a devDependencies.
