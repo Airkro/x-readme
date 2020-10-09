@@ -2,4 +2,9 @@
 
 const Cheetor = require('cheetor');
 
-new Cheetor().command('./cwd/dev').setup();
+new Cheetor()
+  .command('./cwd/dev')
+  .effect(({ scriptName }) => {
+    process.title = scriptName;
+  })
+  .setup();
