@@ -1,6 +1,6 @@
 {
   "name": "x-readme",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Create `README.md` automatically",
   "license": "MIT",
   "author": {
@@ -40,6 +40,7 @@
     "chalk": "^4.1.0",
     "cheetor": "^0.3.2",
     "fs-chain": "^1.4.1",
+    "iconv-lite": "^0.6.2",
     "qs": "^6.9.4",
     "remark": "^13.0.0",
     "remark-parse": "^9.0.0",
