@@ -2,7 +2,7 @@ const { resolve } = require('path');
 const { green } = require('chalk');
 const { JsonToText } = require('fs-chain');
 
-const generate = require('../lib/generate');
+const generate = require('../lib/generate.cjs');
 
 exports.command = 'dev';
 

@@ -3,7 +3,7 @@
 const Cheetor = require('cheetor');
 
 new Cheetor()
-  .command('./cwd/dev')
+  .command('./cwd/dev.cjs')
   .effect(({ scriptName }) => {
     process.title = scriptName;
   })
